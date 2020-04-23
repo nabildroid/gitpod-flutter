@@ -5,6 +5,7 @@ LABEL maintainer="vitortorresvt@gmail.com"
 USER root
 
 RUN apt-get update -y
+RUN apt-get install inotify-tools rsync -y
 RUN apt-get install -y gcc make build-essential wget curl unzip apt-utils xz-utils libkrb5-dev gradle libpulse0 android-tools-adb android-tools-fastboot
 RUN apt remove --purge openjdk-*-jdk
 RUN apt-get install -y openjdk-8-jdk
