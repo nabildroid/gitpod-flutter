@@ -16,8 +16,8 @@ ENV SYNC="/workspace/gitpod-flutter/sync.sh"
 RUN echo "$(touch $SYNC)"
 RUN echo "$(echo \"for i in $@\" >> $SYNC)" 
 RUN echo "$(echo \"do\" >> $SYNC)"
-RUN echo "$(echo \"rsync -e 'ssh -p NGROK_PORT_HERE' \$i SSH_USER_NAME_HERE@0.tcp.ngrok.io:LOCAL_DIR_HERE/\$i\")" >> $SYNC
-RUN echo "$(echo \"done\")" >> $SYNC
+RUN echo "$(echo \"rsync -e 'ssh -p NGROK_PORT_HERE' \$i SSH_USER_NAME_HERE@0.tcp.ngrok.io:LOCAL_DIR_HERE/\$i\" >> $SYNC)" 
+RUN echo "$(echo \"done\" >> $SYNC)" 
 RUN cd $WORKSPACE
 RUN watchman watch $WORKSPACE
 
